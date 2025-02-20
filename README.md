@@ -40,6 +40,8 @@ DeviceFileEvents
 ```
 Searched the DeviceProcessEvents table for any ProcessCommandLine that contained the string “tor-browser-windows-x86_64-portable-14.0.6.exe”. Based on the logs returned, on the afternoon of February 20, 2025, at 2:38 PM, a computer named gelo-vm created a new process. The user parkerang downloaded and executed the Tor Browser installer (version 14.0.6, 64-bit, portable) from their Downloads folder on a Windows system. The installer was run with the /S flag, indicating a silent installation. The file had a unique SHA-256 hash for verification: 8396d2cd3859189ac38629ac7d71128f6596b5cc71e089ce490f86f14b4ffb94.
 
+![image](https://github.com/user-attachments/assets/6c29635c-62b4-4519-b86f-204b7b10f6bc)
+
 ---
 
 ### 2. Searched the `DeviceProcessEvents` Table
