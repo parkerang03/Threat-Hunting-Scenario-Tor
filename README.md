@@ -25,20 +25,20 @@ Management suspects that some employees may be using TOR browsers to bypass netw
 
 ### 1. Searched the `DeviceFileEvents` Table
 
-Searched for any file that had the string "tor" in it and discovered what looks like the user "employee" downloaded a TOR installer, did something that resulted in many TOR-related files being copied to the desktop, and the creation of a file called `tor-shopping-list.txt` on the desktop at `2024-11-08T22:27:19.7259964Z`. These events began at `2024-11-08T22:14:48.6065231Z`.
+Searched the DeviceFileEvents table for ANY file that had the string “tor” in it and discovered what looks like the user “parkerang” downloaded a tor installer, did something that resulted in many tor-related files being copied to the desktop and the creation of a file called `tor-shopping-list` on the desktop at `2025-02-20T19:54:45.2764586Z`. These events began at: `2025-02-20T19:36:56.1607237Z`.
 
 **Query used to locate events:**
 
 ```kql
-DeviceFileEvents  
-| where DeviceName == "threat-hunt-lab"  
-| where InitiatingProcessAccountName == "employee"  
-| where FileName contains "tor"  
-| where Timestamp >= datetime(2024-11-08T22:14:48.6065231Z)  
-| order by Timestamp desc  
-| project Timestamp, DeviceName, ActionType, FileName, FolderPath, SHA256, Account = InitiatingProcessAccountName
+DeviceFileEvents
+| where DeviceName == "gelo-vm"
+| where InitiatingProcessAccountName == "parkerang"
+| where FileName contains "tor"
+| where Timestamp >= datetime(2025-02-20T19:36:56.1607237Z)
+| order by Timestamp desc
+| project Timestamp, DeviceName, ActionType, FileName, FolderPath, Account = InitiatingProcessAccountName
 ```
-<img width="1212" alt="image" src="https://github.com/user-attachments/assets/71402e84-8767-44f8-908c-1805be31122d">
+Searched the DeviceProcessEvents table for any ProcessCommandLine that contained the string “tor-browser-windows-x86_64-portable-14.0.6.exe”. Based on the logs returned, on the afternoon of February 20, 2025, at 2:38 PM, a computer named gelo-vm created a new process. The user parkerang downloaded and executed the Tor Browser installer (version 14.0.6, 64-bit, portable) from their Downloads folder on a Windows system. The installer was run with the /S flag, indicating a silent installation. The file had a unique SHA-256 hash for verification: 8396d2cd3859189ac38629ac7d71128f6596b5cc71e089ce490f86f14b4ffb94.
 
 ---
 
