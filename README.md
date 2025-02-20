@@ -159,8 +159,7 @@ DeviceNetworkEvents
 ---
 
 ## Summary
-
-On February 20, 2025, user "parkerang" engaged in TOR Browser activity on the "gelo-vm" system. The timeline began with the download of the TOR installer from the Downloads folder and the subsequent silent execution to install the browser. Shortly after, the TOR Browser was launched, spawning multiple processes including instances of `firefox.exe` and `tor.exe`. Network activity consistent with TOR usage was observed, including a connection to a known TOR relay on port `9001`, along with additional connections over ports `443` and others. Finally, a file named `tor-shopping-list` was created on the desktop, suggesting further TOR-related actions or note-taking.
+- On February 20, 2025, user "parkerang" engaged in TOR Browser activity on the "gelo-vm" system. The timeline began with the download of the TOR installer from the Downloads folder and the subsequent silent execution to install the browser. Shortly after, the TOR Browser was launched, spawning multiple processes including instances of `firefox.exe` and `tor.exe`. Network activity consistent with TOR usage was observed, including a connection to a known TOR relay on port `9001`, along with additional connections over ports `443` and others. Finally, a file named `tor-shopping-list` was created on the desktop, suggesting further TOR-related actions or note-taking.
 ---
 
 ## Response Taken
